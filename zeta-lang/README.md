@@ -141,7 +141,7 @@ greet("Mir")  // with argument(s)
 ~~~~
 let rand   = random(10);      // Takes a number, n, and returns a random number between 0 and n
 let name   = readString();    // reads a string from user
-let number = readInT();       // reads a number from user otherwise `nil`
+let number = readInt();       // reads a number from user otherwise `nil`
 
 ~~~~
 
