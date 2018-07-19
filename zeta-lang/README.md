@@ -161,7 +161,7 @@ let number = readInt();       // reads a number from user otherwise `nil`
 ~~~~
 class Greeting {
     Greeting(name) { // The Constructor
-        this.name = name // Instance field
+        this.name = name; // Instance field
     }
 
     sayHello() { // Instance method
