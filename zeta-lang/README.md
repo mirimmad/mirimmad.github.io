@@ -107,7 +107,9 @@ let x = 0;
 while(true) {
     print x;
     x = x + 1;
-    if (x == 10) break;
+    if (x == 10) {
+        break; 
+    }
 } // should print 1 .. 10
 ~~~~
 ## Functions
