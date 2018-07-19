@@ -101,7 +101,15 @@ for( let i = 0 ; i < 50 ; i = i + 1 ) {
 
 for(;;) print "infinite loop";
 ~~~~
-
+## Break Keyword
+~~~~
+let x = 0;
+while(true) {
+    print x;
+    x = x + 1;
+    if (x == 10) break;
+} // should print 1 .. 10
+~~~~
 ## Functions
 
 ~~~~
