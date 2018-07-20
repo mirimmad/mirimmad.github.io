@@ -5,6 +5,7 @@
 let rand = random(5);
 let count = 0;
 let check = false;
+print "Enter a number:";
 while(count < 3) {
     let guess = readInt();
     if(guess == rand) {
