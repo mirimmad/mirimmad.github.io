@@ -16,8 +16,39 @@
   }
   
     </script>
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-  <script src="//unpkg.com/prismjs/components/prism-java.min.js"></script>
+ <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-java.min.js"></script>
+<script type="application/javascript">
+Prism.languages.zeta = Prism.languages.extend('clike', {
+	'keyword': /\b(?:for|if|private|this|else|return|class|super|while|let|print|fn|true|false|nil)\b/,
+	'number': /\b0b[01]+\b|\b0x[\da-f]*\.?[\da-fp-]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?[df]?/i,
+	'operator': {
+		pattern: /(^|[^.])(?:\+[+=]?|-[-=]?|!=?|<<?=?|>>?>?=?|==?|&[&=]?|\|[|=]?|\*=?|\/=?|%=?|\^=?|[?:~])/m,
+		lookbehind: true
+	}
+});
+
+Prism.languages.insertBefore('zeta','function', {
+	'annotation': {
+		alias: 'punctuation',
+		pattern: /(^|[^.])@\w+/,
+		lookbehind: true
+	}
+});
+
+Prism.languages.insertBefore('zeta', 'class-name', {
+	'generics': {
+		pattern: /<\s*\w+(?:\.\w+)?(?:\s*,\s*\w+(?:\.\w+)?)*>/i,
+		alias: 'function',
+		inside: {
+			keyword: Prism.languages.zeta.keyword,
+			punctuation: /[<>(),.:]/
+		}
+	}
+});
+
+</script>
   
 </body>
 </html>

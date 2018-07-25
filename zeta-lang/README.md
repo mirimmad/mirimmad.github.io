@@ -1,36 +1,36 @@
 ### Zeta Programming langauge
 
 ## Comments, Variables, Value Types and Assignment
-~~~~
+~~~~ zeta
 // This is a comment
 ~~~~
 
-~~~
+~~~ zeta
 let a;      // declare and assign nil to a
 let b = 50; // declare and assign 50 to b
 
 ~~~
 
-~~~~
+~~~~ zeta
 let a = nil;    // value nil
 let a = true;   // boolean true
 let a = false;  // boolean false
 let a = 123;    // number
 let a = 123.32; // number
-let a = "hello" // string
+let a = "hello"; // string
 ~~~~
 
-~~~~
+~~~~ zeta
 a = 32;   // assign to 32
 a = true; // assign a to true
 ~~~~
 > * Variables are always mutable.
-* Global variables can be re-declared but local variables can't be.
+ * Global variables can be re-declared but local variables can't be.
 
 
 ## Operators
 
-~~~~
+~~~~ zeta
 print 1 + 2;
 print 1 - 2;
 print 5 * 30;
@@ -44,14 +44,14 @@ print 5 * "hello"       // Runtime Error
 
 ## The print Statement
 
-~~~~
+~~~~ zeta
 print "hello"; // prints hello
 print 1+2+3;   //prints 6
 ~~~~
 
 ## Block Statement 
 
-~~~~
+~~~~ zeta
 let x = 0;
 {
     x = x + 1;
@@ -65,7 +65,7 @@ print y;         // Undefined variable;
 
 ## Conditonal statements
 
-~~~~
+~~~~ zeta
 // if
 
 if(a == 42) {
@@ -83,8 +83,8 @@ if(a == 42) {
 ~~~~
 
 ## Loops
-
-~~~~
+ 
+~~~~ zeta
 // While Loop
 
 while(a < 42) {
@@ -100,9 +100,9 @@ for( let i = 0 ; i < 50 ; i = i + 1 ) {
 }
 
 for(;;) print "infinite loop";
-~~~~
+~~~~ 
 ## Break Keyword
-~~~~
+~~~~ zeta
 let x = 0;
 while(true) {
     print x;
@@ -114,7 +114,7 @@ while(true) {
 ~~~~
 ## Functions
 
-~~~~
+~~~~ zeta
 fn hello() {
     print "hello";
 }
@@ -128,7 +128,7 @@ fn greet(name) {
 
 ## Closures
 
-~~~~
+~~~~ zeta
 // A function that returns updated `count` on every call
 fn makeCounter() {
     let count = 0;
@@ -142,13 +142,13 @@ fn makeCounter() {
 
 ## Function calls
 
-~~~~
+~~~~ zeta
 hello();      // without argument(s)
 greet("Mir")  // with argument(s)
 ~~~~
 ## Inbuilt Functions
 
-~~~~
+~~~~ zeta
 let rand   = random(10);      // Takes a number, n, and returns a random number between 0 and n
 let name   = readString();    // reads a string from user
 let number = readInt();       // reads a number from user otherwise `nil`
@@ -158,7 +158,7 @@ let number = readInt();       // reads a number from user otherwise `nil`
 
 ## Classes
 
-~~~~
+~~~~ zeta
 class Greeting {
     Greeting(name) { // The Constructor
         this.name = name; // Instance field
@@ -175,7 +175,7 @@ class Greeting {
 ~~~~
 ## Class Instance
 
-~~~~
+~~~~ zeta
 let greeting = Greeting("Immad");
 print greeeting.sayHello();     // prints Hello Immad
 print greeting.sayNight();      // prints Good Night Immad
@@ -185,7 +185,7 @@ print greeting.sayNight();      // prints Good Night Immad
 
 ## Inheritance
 
-~~~~
+~~~~ zeta
 class A {
     methodA1() {
         print "methodA1";

@@ -1,7 +1,7 @@
 ### Miscellaneous programs 
 
 ## Guessing game
-~~~~
+~~~~ zeta
 let rand = random(5);
 let count = 0;
 let check = false;
@@ -19,7 +19,7 @@ if(!check) print "You loose";
 
 ## 2-D point
 
-~~~~
+~~~~ zeta
 class Point {
     Point(x,y) {
         this.x = x;

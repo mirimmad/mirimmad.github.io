@@ -10,5 +10,6 @@
 * Made for educational purposes
 * Supports modern features
 
-[GitHub](https://github.com/mirimmad/zeta-lang)
 [Get Started](#zeta-programming-langauge)
+[GitHub](https://github.com/mirimmad/zeta-lang)
+
