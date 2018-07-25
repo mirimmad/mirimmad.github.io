@@ -25,7 +25,7 @@ a = 32;   // assign to 32
 a = true; // assign a to true
 ~~~~
 > * Variables are always mutable.
- * Global variables can be re-declared but local variables can't be.
+* Global variables can be re-declared but local variables can't be.
 
 
 ## Operators
