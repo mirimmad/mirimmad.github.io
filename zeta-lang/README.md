@@ -39,7 +39,7 @@ print 22.0/7.0;
 print "hello" + "hi";
 print 1 + "one";
 print "hello" * 5;      // prints hello five times
-print 5 * "hello"       // Runtime Error
+print 5 * "hello";      // Runtime Error
 ~~~~
 
 ## The print Statement
@@ -136,7 +136,7 @@ fn makeCounter() {
         count = count + 1;
         print count;
     }
-    return count;
+    return increment;
 }
 ~~~~
 
