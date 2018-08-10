@@ -132,7 +132,7 @@ fn greet(name) {
 // A function that returns updated `count` on every call
 fn makeCounter() {
     let count = 0;
-    fn incerment() {
+    fn increment() {
         count = count + 1;
         print count;
     }
