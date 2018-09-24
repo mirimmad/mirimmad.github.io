@@ -11,6 +11,7 @@ while(count < 3) {
     if(guess == rand) {
         print "You won";
         check = true;
+        break;
     }
     count = count + 1;
 }
