@@ -1,8 +1,8 @@
-From be19c4e56082503a18bbf79138492d1a889d7819 Mon Sep 17 00:00:00 2001
+From 62b7b7736975172f03b30783436fbc9217324223 Mon Sep 17 00:00:00 2001
 From: mir <mirimmad17@gmail.com>
 Date: Sat, 2 Jul 2022 15:04:37 +0530
-Subject: [PATCH] [PATCH] analyzer: implement five new warnings for misuse of
- POSIX file descriptor APIs [PR106003].
+Subject: [PATCH] analyzer: implement five new warnings for misuse of POSIX
+ file descriptor APIs [PR106003].
 
 This patch adds a new state machine to the analyzer for checking usage of POSIX file descriptor
 APIs with five new warnings.
