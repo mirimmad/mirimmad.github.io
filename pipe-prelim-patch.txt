@@ -1,0 +1,42 @@
+From a667ae348246a59082eeb64b719c382ee3391766 Mon Sep 17 00:00:00 2001
+From: Immad Mir <mirimmad@outlook.com>
+Date: Mon, 12 Sep 2022 22:42:59 +0530
+Subject: [PATCH] analyzer: preliminary patch for adding support for "pipe".
+
+---
+ gcc/analyzer/sm-fd.cc | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/gcc/analyzer/sm-fd.cc b/gcc/analyzer/sm-fd.cc
+index 505d598f3f0..09e726cbfda 100644
+--- a/gcc/analyzer/sm-fd.cc
++++ b/gcc/analyzer/sm-fd.cc
+@@ -46,6 +46,7 @@ along with GCC; see the file COPYING3.  If not see
+ #include "analyzer/store.h"
+ #include "analyzer/region-model.h"
+ #include "bitmap.h"
++#include "fold-const.h"
+ 
+ #if ENABLE_ANALYZER
+ 
+@@ -805,6 +806,17 @@ fd_state_machine::on_stmt (sm_context *sm_ctxt, const supernode *node,
+ 	    check_for_dup (sm_ctxt, node, stmt, call, callee_fndecl, DUP_3);
+ 	    return true;
+ 	  }
++	
++	if (is_named_call_p (callee_fndecl, "pipe", call, 1))
++	  {
++	    tree arg = gimple_call_arg (call, 0);
++	    tree arr = TREE_OPERAND (arg, 0);
++	    tree len = size_int (2);
++	    tree arr_type = build_array_type (integer_type_node, build_index_type (len));
++	    tree int_0 = build_int_cst (integer_type_node, 0);
++	    tree a_0 = build4 (ARRAY_REF, integer_type_node, arr, int_0, NULL_TREE, NULL_TREE);
++	    sm_ctxt->set_next_state (stmt, a_0, m_constant_fd);
++	  }
+ 
+ 	{
+ 	  // Handle __attribute__((fd_arg))
+-- 
+2.25.1
+
